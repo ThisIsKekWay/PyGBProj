@@ -1,0 +1,19 @@
+from fractions import Fraction as F
+c = 3/2
+b = 1/3
+z = '/'
+
+def fraction(user_number_1, user_number_2, operation):
+    user_number_1 = F(user_number_1).limit_denominator(10) # Переводим полученные значения в дроби и "округляем"
+    user_number_2 = F(user_number_2).limit_denominator(10)
+    if operation in ('+', '-', '*', '/'):                  #Тут все просто, возвращаем результат нужной операции , например в переменную, сразу в строку.
+        if operation == '+':
+            return str(user_number_1 + user_number_2)
+        elif operation == '-':
+            return str(user_number_1 - user_number_2)
+        elif operation == '*':
+            return str(user_number_1 * user_number_2)
+        elif operation == '/':
+             return str(user_number_1 / user_number_2)
+DA = fraction(c, b, z)
+print(DA)
