@@ -8,6 +8,10 @@ def arithmetic(a, b, symbol_operator): # a и b должны быть тип lis
                '-':lambda x, y:x-y,
                '*':lambda x, y:x*y, 
                '/':lambda x, y:x/y,}
-    return f'{complex1} {symbol_operator} {complex2} = {operation[symbol_operator](complex1,complex2)}'
+    res = f'{complex1} {symbol_operator} {complex2} = {operation[symbol_operator](complex1, complex2)}'
+    if str(operation[symbol_operator](complex1, complex2))[3] == '0':
+        return res[:-4:] + ')'
+    else:
+        return res
 
 print(arithmetic(f, g, k))
