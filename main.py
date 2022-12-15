@@ -1,5 +1,6 @@
 from Complex_calc import arithmetic
 from Fractional_calc import fraction
+from logging import logging_to_file
 words1 = {0: 'Действительную', 1: 'Мнимую'}
 words2 = {0: 'Числитель', 1: 'Знаменатель'}
 num1 = list()
@@ -46,7 +47,7 @@ if validation(mode):
         num1.pop()
         num1.pop()
         res = arithmetic(num1, num2, mode1)
-        print(res)
+        logging_to_file(res)
     elif mode == '2':
         print('Выбран режим вычисления натуральных дробей\n')
         for i in range(2):
@@ -65,7 +66,7 @@ if validation(mode):
         num1.pop()
         num1.pop()
         res = fraction(num1[0]/num1[1], num2[0]/num2[1], mode1)
-        print(res)
+        logging_to_file(res)
     else:
         print('Выбранный режим не распознан\n'
               'Окончание работы программы')
