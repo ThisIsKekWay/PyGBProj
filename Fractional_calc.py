@@ -13,5 +13,3 @@ def fraction(user_number_1, user_number_2, operation):
             return str(user_number_1 * user_number_2)
         elif operation == '/':
             return str(user_number_1 / user_number_2)
-
-
