@@ -1,6 +1,3 @@
-f = [8, 5]   #  Это
-g = [3, 4]   #  для 
-k = '-'      #  проверки
 def arithmetic(a, b, symbol_operator): # a и b должны быть тип list  a = [], b =[]
     complex1 = complex(a[0], a[1])
     complex2 = complex(b[0], b[1])
@@ -13,5 +10,3 @@ def arithmetic(a, b, symbol_operator): # a и b должны быть тип lis
         return res[:-4:] + ')'
     else:
         return res
-
-print(arithmetic(f, g, k))
