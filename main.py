@@ -40,8 +40,7 @@ if validation(mode):
                 if validation(buffer):
                     num1.append(int(buffer))
                 else:
-                    print('Введены некорректные данные\n'
-                          'Окончание работы программы')
+                    print('Введены некорректные данные\n')
                     break
         num2 = [num1[2], num1[3], mode1]
         num1.pop()
