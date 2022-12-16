@@ -1,7 +1,7 @@
 from Complex_calc import arithmetic
 from Fractional_calc import fraction
 from logging import logging_to_file
-words1 = {0: 'Действительную', 1: 'Мнимую'}
+words1 = {0: 'Действительную часть', 1: 'Мнимую часть'}
 words2 = {0: 'Числитель', 1: 'Знаменатель'}
 num1 = list()
 
@@ -34,7 +34,7 @@ if validation(mode):
         print('Выбран режим вычисления комплексных чисел\n')
         for i in range(2):
             for j in range(2):
-                print(f'Введите {words1[j]} часть числа {i + 1}\n')
+                print(f'Введите {words1[j]} числа {i + 1}\n')
                 buffer = input()
                 validation(buffer)
                 if validation(buffer):
@@ -48,11 +48,12 @@ if validation(mode):
         num1.pop()
         res = arithmetic(num1, num2, mode1)
         logging_to_file(res)
+        print(res)
     elif mode == '2':
         print('Выбран режим вычисления натуральных дробей\n')
         for i in range(2):
             for j in range(2):
-                print(f'Введите {words2[j]} часть числа {i + 1}\n')
+                print(f'Введите {words2[j]} числа {i + 1}\n')
                 buffer = input()
                 validation(buffer)
                 if validation(buffer):
@@ -65,8 +66,9 @@ if validation(mode):
         num2 = [num1[2], num1[3], mode1]
         num1.pop()
         num1.pop()
-        res = fraction(num1[0]/num1[1], num2[0]/num2[1], mode1)
+        res = fraction(f'{num1[0]}/{num1[1]}', f'{num2[0]}/{num2[1]}', mode1)
         logging_to_file(res)
+        print(res)
     else:
         print('Выбранный режим не распознан\n'
               'Окончание работы программы')
